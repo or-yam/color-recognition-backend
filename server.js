@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const bcrypt = require('bcrypt-nodejs');
 app.use(express.json());
 
 const database = {
@@ -27,9 +28,28 @@ const database = {
 app.get('/', (req, res) => {
   res.send(database.users);
 });
+
+/*
+// Load hash from your password DB.
+bcrypt.compare("bacon", hash, function(err, res) {
+    // res == true
+});
+bcrypt.compare("veggies", hash, function(err, res) {
+    // res = false
+});
+*/
+
 //Sign in post request
 app.post('/signin', (req, res) => {
-  if (
+  // Load hash from your password DB.
+bcrypt.compare("bacon", hash, function(err, res) {
+    // res == true
+});
+bcrypt.compare("veggies", hash, function(err, res) {
+    // res = false
+});
+
+    if (
     req.body.email === database.users[0].email &&
     req.body.password === database.users[0].password
   ) {
@@ -41,6 +61,9 @@ app.post('/signin', (req, res) => {
 //Register Post request
 app.post('/register', (req, res) => {
   const { email, name, password } = req.body;
+  bcrypt.hash(password, null, null, function (err, hash) {
+    console.log(hash);
+  });
   database.users.push({
     id: '99',
     name: name,
@@ -82,7 +105,8 @@ app.put('/image', (req, res) => {
   }
 });
 
+
+
 app.listen(3001, () => {
   console.log('app is running on port 3001');
 });
-
