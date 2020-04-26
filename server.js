@@ -12,7 +12,7 @@ app.use(cors());
 const db = knex({
   client: 'pg',
   connection: {
-    host: '127.0.0.1',
+    host: 'postgresql-regular-81249',
     user: 'postgres',
     password: '1qaz',
     database: 'color_reco_db',
