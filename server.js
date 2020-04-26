@@ -25,7 +25,7 @@ db.select('*')
 
 // Check server is working
 app.get('/', (req, res) => {
-  res.send(database.users);
+  res.send('this is working');
 });
 
 app.post('/signin', (req, res) => {
