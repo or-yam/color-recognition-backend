@@ -1,11 +1,15 @@
-# Color Recognition App - Back-End 💻
-## This is my version of the final project in ZeroToMastery course.
-#### [Original ZTM Repo](https://github.com/aneagoie/smart-brain)
+# Color Recognition App - Backend 💾
 
-### Build on Node.Js
+### Recognize colors and their amount from an image link
 
-#### Packages: 
-* express
-* bycrypt 
-* cors
-* knex
+## [Try It Here](https://color-recognition-app.herokuapp.com)
+
+### This is the server side repo for client side repo [click here](https://github.com/or-yam/color-recognition)
+
+---
+
+### Tools and Libraries
+
+- Server - NodeJs, Express, bcrypt, cors, knex
+- DataBase - PostgreSQL
+- External Services: [Clarifai API](https://www.clarifai.com/)
